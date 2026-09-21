@@ -1,0 +1,125 @@
+rules_version = '2';
+
+service cloud.firestore {
+
+  match /databases/{database}/documents {
+
+    /*
+     * ==========================================
+     * PLATILLOS
+     * ==========================================
+     */
+
+    match /dishes/{dishId} {
+
+      allow read: if true;
+
+      allow write: if false;
+    }
+
+
+    /*
+     * ==========================================
+     * CATEGORÍAS
+     * ==========================================
+     */
+
+    match /categories/{categoryId} {
+
+      allow read: if true;
+
+      allow write: if false;
+    }
+
+
+    /*
+     * ==========================================
+     * USUARIOS
+     * ==========================================
+     */
+
+    match /users/{userId} {
+
+      allow read, create, update: if
+        request.auth != null
+        &&
+        request.auth.uid == userId;
+
+      allow delete: if
+        request.auth != null
+        &&
+        request.auth.uid == userId;
+
+
+      /*
+       * ========================================
+       * CARRITO
+       * ========================================
+       */
+
+      match /cart/{cartId} {
+
+        allow read, write: if
+          request.auth != null
+          &&
+          request.auth.uid == userId;
+      }
+    }
+
+
+    /*
+     * ==========================================
+     * ÓRDENES
+     * ==========================================
+     *
+     * NUEVO
+     *
+     * Cada orden se almacena como:
+     *
+     * orders/{orderId}
+     *
+     */
+
+    match /orders/{orderId} {
+
+      /*
+       * El usuario puede consultar
+       * únicamente sus propias órdenes.
+       */
+      allow read: if
+        request.auth != null
+        &&
+        resource.data.userId ==
+        request.auth.uid;
+
+
+      /*
+       * El usuario puede crear una orden
+       * solamente si el userId de la orden
+       * corresponde al usuario autenticado.
+       */
+      allow create: if
+        request.auth != null
+        &&
+        request.resource.data.userId ==
+        request.auth.uid;
+
+
+      /*
+       * Una vez creada la orden,
+       * el cliente móvil no puede modificarla.
+       *
+       * Esto evita que un usuario cambie
+       * manualmente el total o estado.
+       */
+      allow update: if false;
+
+
+      /*
+       * Las órdenes tampoco pueden
+       * ser eliminadas desde la aplicación.
+       */
+      allow delete: if false;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "categories": [
+    {
+      "id": "pizzas",
+      "name": "Pizzas"
+    },
+    {
+      "id": "hamburguesas",
+      "name": "Hamburguesas"
+    },
+    {
+      "id": "entradas",
+      "name": "Entradas"
+    },
+    {
+      "id": "bebidas",
+      "name": "Bebidas"
+    },
+    {
+      "id": "postres",
+      "name": "Postres"
+    }
+  ],
+
+  "dishes": [
+    {
+      "id": "pizza_pepperoni",
+      "name": "Pizza Pepperoni",
+      "description": "Pizza con salsa de tomate, queso mozzarella y pepperoni.",
+      "price": 189,
+      "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e",
+      "category": "pizzas",
+      "available": true
+    },
+    {
+      "id": "pizza_hawaiana",
+      "name": "Pizza Hawaiana",
+      "description": "Pizza con salsa de tomate, queso mozzarella, jamón y piña.",
+      "price": 199,
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+      "category": "pizzas",
+      "available": true
+    },
+    {
+      "id": "hamburguesa_clasica",
+      "name": "Hamburguesa Clásica",
+      "description": "Hamburguesa de carne de res con queso, lechuga, tomate y cebolla.",
+      "price": 159,
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+      "category": "hamburguesas",
+      "available": true
+    },
+    {
+      "id": "hamburguesa_bbq",
+      "name": "Hamburguesa BBQ",
+      "description": "Hamburguesa de carne de res con queso, tocino y salsa BBQ.",
+      "price": 179,
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349",
+      "category": "hamburguesas",
+      "available": true
+    },
+    {
+      "id": "papas_fritas",
+      "name": "Papas Fritas",
+      "description": "Papas fritas crujientes sazonadas con sal.",
+      "price": 69,
+      "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877",
+      "category": "entradas",
+      "available": true
+    },
+    {
+      "id": "refresco_cola",
+      "name": "Refresco de Cola",
+      "description": "Refresco de cola frío.",
+      "price": 39,
+      "image": "https://images.unsplash.com/photo-1629203849820-fdd70d49c38e",
+      "category": "bebidas",
+      "available": true
+    },
+    {
+      "id": "limonada",
+      "name": "Limonada",
+      "description": "Limonada natural preparada con limón y hielo.",
+      "price": 45,
+      "image": "https://images.unsplash.com/photo-1621263764928-df1444c5e859",
+      "category": "bebidas",
+      "available": true
+    },
+    {
+      "id": "cheesecake",
+      "name": "Cheesecake",
+      "description": "Rebanada de cheesecake cremoso con base de galleta.",
+      "price": 89,
+      "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187",
+      "category": "postres",
+      "available": true
+    }
+  ],
+
+  "authUsers": [
+    {
+      "email": "demo@restaurantapp.com",
+      "password": "Demo123456",
+      "displayName": "Usuario Demo"
+    }
+  ],
+
+  "users": [
+    {
+      "email": "demo@restaurantapp.com",
+      "name": "Usuario",
+      "lastName": "Demo",
+      "phone": "3312345678",
+      "address": "Guadalajara, Jalisco"
+    }
+  ],
+
+  "carts": [
+    {
+      "userId": "",
+      "items": [
+        {
+          "dishId": "pizza_pepperoni",
+          "name": "Pizza Pepperoni",
+          "price": 189,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e"
+        },
+        {
+          "dishId": "refresco_cola",
+          "name": "Refresco de Cola",
+          "price": 39,
+          "quantity": 2,
+          "image": "https://images.unsplash.com/photo-1629203849820-fdd70d49c38e"
+        }
+      ]
+    }
+  ],
+
+  "orders": [
+    {
+      "id": "order_demo_001",
+      "userId": "",
+      "status": "pending",
+      "total": 267,
+      "createdAt": "2026-09-06T18:00:00.000Z",
+      "items": [
+        {
+          "dishId": "pizza_pepperoni",
+          "name": "Pizza Pepperoni",
+          "price": 189,
+          "quantity": 1,
+          "subtotal": 189,
+          "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e"
+        },
+        {
+          "dishId": "refresco_cola",
+          "name": "Refresco de Cola",
+          "price": 39,
+          "quantity": 2,
+          "subtotal": 78,
+          "image": "https://images.unsplash.com/photo-1629203849820-fdd70d49c38e"
+        }
+      ]
+    }
+  ]
+}
