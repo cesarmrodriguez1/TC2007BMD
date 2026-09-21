@@ -1,6 +1,6 @@
 import type { RouteResult } from '../types/route';
 
-const GOOGLE_ROUTES_API_KEY = 'AIzaSyCv4xRdN2S3PITLeS40tdxdI-3t6LDawAw';
+const GOOGLE_ROUTES_API_KEY = 'API KEY IS PLACED HERE';
 
 const ROUTES_URL =
   'https://routes.googleapis.com/directions/v2:computeRoutes';
